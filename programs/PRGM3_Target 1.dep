@@ -1,0 +1,2 @@
+Dependencies for Project 'PRGM3', Target 'Target 1': (DO NOT MODIFY !)
+F (.\PRGM3.s)(0x62BD935C)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I F:\softwares\Keil\ARM\RV31\INC-I F:\softwares\Keil\ARM\CMSIS\Include-I F:\softwares\Keil\ARM\Inc\Philips--list .\prgm3.lst --xref -o .\prgm3.o --depend .\prgm3.d)

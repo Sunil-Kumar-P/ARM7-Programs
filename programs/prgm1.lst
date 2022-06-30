@@ -1,0 +1,54 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             MUL2NUM,CODE,READONLY
+    2 00000000                 ENTRY
+    3 00000000 E59F0010        LDR              R0,=NUM
+    4 00000004 E1D010B0        LDRH             R1,[R0]
+    5 00000008 E1D020B2        LDRH             R2,[R0,#2]
+    6 0000000C E0030291        MUL              R3,R1,R2
+    7 00000010 EAFFFFFE 
+                       STOP    B                STOP
+    8 00000014 22 12 33 
+              13       NUM     DCW              0X1222,0X1333
+    9 00000018                 END
+              00000000 
+Command Line: --debug --xref --apcs=interwork --depend=.\prgm1.d -o.\prgm1.o -I
+F:\softwares\Keil\ARM\RV31\INC -IF:\softwares\Keil\ARM\CMSIS\Include -IF:\softw
+ares\Keil\ARM\Inc\Philips --predefine="__EVAL SETA 1" --list=.\prgm1.lst prgm1.
+s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MUL2NUM 00000000
+
+Symbol: MUL2NUM
+   Definitions
+      At line 1 in file prgm1.s
+   Uses
+      None
+Comment: MUL2NUM unused
+NUM 00000014
+
+Symbol: NUM
+   Definitions
+      At line 8 in file prgm1.s
+   Uses
+      At line 3 in file prgm1.s
+Comment: NUM used once
+STOP 00000010
+
+Symbol: STOP
+   Definitions
+      At line 7 in file prgm1.s
+   Uses
+      At line 7 in file prgm1.s
+Comment: STOP used once
+3 symbols
+336 symbols in table

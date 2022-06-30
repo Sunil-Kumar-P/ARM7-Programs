@@ -1,0 +1,97 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ADD_16,CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000 E3A05006        MOV              R5,#6
+    4 00000004 E3A00000        MOV              R0,#0
+    5 00000008 E59F1024        LDR              R1,=ARRAY_1
+    6 0000000C E0D120B2 
+                       LOOP    LDRH             R2,[R1],#2
+    7 00000010 E0820000        ADD              R0,R2,R0
+    8 00000014 E2555001        SUBS             R5,R5,#1
+    9 00000018 1AFFFFFB        BNE              LOOP
+   10 0000001C E59F4014        LDR              R4,=RESULT
+   11 00000020 E5840000        STR              R0,[R4]
+   12 00000024 11 11 22 
+              22 33 33 
+              44 44 55 
+              55 66 66 ARRAY_1 DCW              0X1111,0X2222,0X3333,0X4444,0X5
+555,0X6666
+   13 00000030 EAFFFFFE 
+                       STOP    B                STOP
+   14 00000034 00000000 
+              00000000         AREA             DATA_1,DATA,READWRITE
+   15 00000000 00000000 
+                       RESULT  DCD              0X0
+   16 00000004                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\prgm4.d -o.\prgm4.o -I
+F:\softwares\Keil\ARM\RV31\INC -IF:\softwares\Keil\ARM\CMSIS\Include -IF:\softw
+ares\Keil\ARM\Inc\Philips --predefine="__EVAL SETA 1" --list=.\prgm4.lst PRGM4.
+s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ADD_16 00000000
+
+Symbol: ADD_16
+   Definitions
+      At line 1 in file PRGM4.s
+   Uses
+      None
+Comment: ADD_16 unused
+ARRAY_1 00000024
+
+Symbol: ARRAY_1
+   Definitions
+      At line 12 in file PRGM4.s
+   Uses
+      At line 5 in file PRGM4.s
+Comment: ARRAY_1 used once
+LOOP 0000000C
+
+Symbol: LOOP
+   Definitions
+      At line 6 in file PRGM4.s
+   Uses
+      At line 9 in file PRGM4.s
+Comment: LOOP used once
+STOP 00000030
+
+Symbol: STOP
+   Definitions
+      At line 13 in file PRGM4.s
+   Uses
+      At line 13 in file PRGM4.s
+Comment: STOP used once
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DATA_1 00000000
+
+Symbol: DATA_1
+   Definitions
+      At line 14 in file PRGM4.s
+   Uses
+      None
+Comment: DATA_1 unused
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 15 in file PRGM4.s
+   Uses
+      At line 10 in file PRGM4.s
+Comment: RESULT used once
+2 symbols
+339 symbols in table

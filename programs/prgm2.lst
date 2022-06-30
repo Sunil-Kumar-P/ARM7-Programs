@@ -1,0 +1,75 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ADD1TO10,CODE,READONLY
+    2 00000000                 ENTRY
+    3 00000000 E59F0044        LDR              R0,=ARRAY
+    4 00000004 E3A0100A        LDR              R1,=10
+    5 00000008 E3A02000        LDR              R2,=0
+    6 0000000C E4903004 
+                       NEXT    LDR              R3,[R0],#4
+    7 00000010 E0832002        ADD              R2,R3,R2
+    8 00000014 E2411001        SUB              R1,#1
+    9 00000018 E3510000        CMP              R1,#0
+   10 0000001C 1AFFFFFA        BNE              NEXT
+   11 00000020 EAFFFFFE 
+                       STOP    B                STOP
+   12 00000024 00000001 
+              00000002 
+              00000003 
+              00000004 
+              00000005 
+              00000006 
+              00000007 
+              00000008 
+              00000009 
+              0000000A ARRAY   DCD              1,2,3,4,5,6,7,8,9,10
+   13 0000004C                 END
+              00000000 
+Command Line: --debug --xref --apcs=interwork --depend=.\prgm2.d -o.\prgm2.o -I
+F:\softwares\Keil\ARM\RV31\INC -IF:\softwares\Keil\ARM\CMSIS\Include -IF:\softw
+ares\Keil\ARM\Inc\Philips --predefine="__EVAL SETA 1" --list=.\prgm2.lst PRGM2.
+s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ADD1TO10 00000000
+
+Symbol: ADD1TO10
+   Definitions
+      At line 1 in file PRGM2.s
+   Uses
+      None
+Comment: ADD1TO10 unused
+ARRAY 00000024
+
+Symbol: ARRAY
+   Definitions
+      At line 12 in file PRGM2.s
+   Uses
+      At line 3 in file PRGM2.s
+Comment: ARRAY used once
+NEXT 0000000C
+
+Symbol: NEXT
+   Definitions
+      At line 6 in file PRGM2.s
+   Uses
+      At line 10 in file PRGM2.s
+Comment: NEXT used once
+STOP 00000020
+
+Symbol: STOP
+   Definitions
+      At line 11 in file PRGM2.s
+   Uses
+      At line 11 in file PRGM2.s
+Comment: STOP used once
+4 symbols
+337 symbols in table

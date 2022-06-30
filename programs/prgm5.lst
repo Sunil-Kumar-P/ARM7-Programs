@@ -1,0 +1,65 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             SQUARE,CODE,READONLY
+    2 00000000                 ENTRY
+    3 00000000 E3A01003        MOV              R1,#0X3
+    4 00000004 E59F0038        LDR              R0,=LUT
+    5 00000008 E1A01101        MOV              R1,R1,LSL#0X2
+    6 0000000C E0800001        ADD              R0,R0,R1
+    7 00000010 E5903000        LDR              R3,[R0]
+    8 00000014 EAFFFFFE 
+                       STOP    B                STOP
+    9 00000018 00000000 
+              00000001 
+              00000004 
+              00000009 
+              00000016 
+              00000025 
+              00000036 
+              00000049 
+              00000064 
+              00000081 
+              00000100 LUT     DCD              0X0,0X1,0X4,0X9,0X16,0X25,0X36,
+0X49,0X64,0X81,0X100
+   10 00000044                 END
+              00000000 
+Command Line: --debug --xref --apcs=interwork --depend=.\prgm5.d -o.\prgm5.o -I
+F:\softwares\Keil\ARM\RV31\INC -IF:\softwares\Keil\ARM\CMSIS\Include -IF:\softw
+ares\Keil\ARM\Inc\Philips --predefine="__EVAL SETA 1" --list=.\prgm5.lst prgm5.
+s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LUT 00000018
+
+Symbol: LUT
+   Definitions
+      At line 9 in file prgm5.s
+   Uses
+      At line 4 in file prgm5.s
+Comment: LUT used once
+SQUARE 00000000
+
+Symbol: SQUARE
+   Definitions
+      At line 1 in file prgm5.s
+   Uses
+      None
+Comment: SQUARE unused
+STOP 00000014
+
+Symbol: STOP
+   Definitions
+      At line 8 in file prgm5.s
+   Uses
+      At line 8 in file prgm5.s
+Comment: STOP used once
+3 symbols
+336 symbols in table
