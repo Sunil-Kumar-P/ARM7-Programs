@@ -1,0 +1,2 @@
+Dependencies for Project 'PROJ8T', Target 'Target 1': (DO NOT MODIFY !)
+F (.\PROGM8T.s)(0x62E2C3CD)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I F:\softwares\Keil\ARM\RV31\INC-I F:\softwares\Keil\ARM\CMSIS\Include-I F:\softwares\Keil\ARM\Inc\Philips--list .\progm8t.lst --xref -o .\progm8t.o --depend .\progm8t.d)
