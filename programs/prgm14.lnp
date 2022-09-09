@@ -1,0 +1,7 @@
+--cpu ARM7TDMI
+".\startup.o"
+".\program14.o"
+--library_type=microlib --strict --scatter ".\prgm14.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\prgm14.map" -o .\prgm14.axf

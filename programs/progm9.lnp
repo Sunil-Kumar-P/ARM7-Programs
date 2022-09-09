@@ -1,0 +1,7 @@
+--cpu ARM7TDMI
+".\startup.o"
+".\pgm9.o"
+--library_type=microlib --strict --scatter ".\progm9.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\progm9.map" -o .\progm9.axf
